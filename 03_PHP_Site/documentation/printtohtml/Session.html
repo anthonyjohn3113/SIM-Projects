@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Session.php</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced}
+pre {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.highlight-caret-row {background-color: #e9eff8}
+.ST0 {background-color: #e9eff8; font-family: Monospaced; font-weight: bold}
+.ST1 {font-family: Monospaced; font-weight: bold}
+.PHP_VARIABLE {color: #6d3206}
+.comment {color: #969696}
+.string {color: #ce7b00}
+.keyword {color: #0000e6}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\xampp\htdocs\SkyDrive\Assignment3\Session.php</td></tr></table>
+<pre>
+ 1  <span class="ST0">&lt;?php</span>
+ 2 <span class="comment">//</span><span class="comment">Taken from </span><span class="comment">http://go4xpert.blogspot.sg/2012/04/login-and-logout-using-sessions-and.html</span>
+ 3 <span class="keyword">function</span> createsessions(<span class="PHP_VARIABLE">$username</span>,<span class="PHP_VARIABLE">$password</span>)
+ 4 {
+ 5     <span class="PHP_VARIABLE">$_SESSION</span>[<span class="string">&quot;vendorusername&quot;</span>] = <span class="PHP_VARIABLE">$username</span>;
+ 6     <span class="PHP_VARIABLE">$_SESSION</span>[<span class="string">&quot;vendorpassword&quot;</span>] = md5(<span class="PHP_VARIABLE">$password</span>);
+ 7     
+ 8     <span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="PHP_VARIABLE">$_POST</span>[<span class="string">&#39;remme&#39;</span>]))
+ 9     {
+10         <span class="comment">//</span><span class="comment">Add additional member to cookie array as per requirement</span>
+11         setcookie(<span class="string">&quot;vendorusername&quot;</span>, <span class="PHP_VARIABLE">$_SESSION</span>[<span class="string">&#39;vendorusername&#39;</span>], time()+60*60*24*100, <span class="string">&quot;/&quot;</span>);
+12         setcookie(<span class="string">&quot;vendorpassword&quot;</span>, <span class="PHP_VARIABLE">$_SESSION</span>[<span class="string">&#39;vendorpassword&#39;</span>], time()+60*60*24*100, <span class="string">&quot;/&quot;</span>);
+13         <span class="keyword">return</span>;
+14     }
+15 }
+16 
+17 <span class="keyword">function</span> clearsessionscookies()
+18 {
+19     <span class="keyword">unset</span>(<span class="PHP_VARIABLE">$_SESSION</span>[<span class="string">&#39;vendorusername&#39;</span>]);
+20     <span class="keyword">unset</span>(<span class="PHP_VARIABLE">$_SESSION</span>[<span class="string">&#39;vendorpassword&#39;</span>]);
+21     
+22     session_unset();    
+23     session_destroy(); 
+24 
+25     setcookie (<span class="string">&quot;vendorusername&quot;</span>, <span class="string">&quot;&quot;</span>,time()-60*60*24*100, <span class="string">&quot;/&quot;</span>);
+26     setcookie (<span class="string">&quot;vendorpassword&quot;</span>, <span class="string">&quot;&quot;</span>,time()-60*60*24*100, <span class="string">&quot;/&quot;</span>);
+27 }
+28 
+29 <span class="keyword">function</span> confirmUser(<span class="PHP_VARIABLE">$username</span>,<span class="PHP_VARIABLE">$password</span>)
+30 {
+31     <span class="comment">//</span><span class="comment"> $md5pass = md5($password); // Not needed any more as pointed by ted_chou12</span>
+32 
+33     <span class="comment">/*</span><span class="comment"> Validate from the database but as for now just demo username and password </span><span class="comment">*/</span>
+34     <span class="keyword">if</span>(<span class="PHP_VARIABLE">$username</span> == <span class="string">&quot;demo&quot;</span> &amp;&amp; <span class="PHP_VARIABLE">$password</span> = <span class="string">&quot;demo&quot;</span>)
+35         <span class="keyword">return</span> <span class="keyword">true</span>;
+36     <span class="keyword">else</span>
+37         <span class="keyword">return</span> <span class="keyword">false</span>;
+38 }
+39 
+40 <span class="keyword">function</span> checkLoggedin()
+41 {
+42     <span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="PHP_VARIABLE">$_SESSION</span>[<span class="string">&#39;vendorusername&#39;</span>]) AND <span class="keyword">isset</span>(<span class="PHP_VARIABLE">$_SESSION</span>[<span class="string">&#39;vendorpassword&#39;</span>]))
+43         <span class="keyword">return</span> <span class="keyword">true</span>;
+44     <span class="keyword">elseif</span>(<span class="keyword">isset</span>(<span class="PHP_VARIABLE">$_COOKIE</span>[<span class="string">&#39;vendorusername&#39;</span>]) &amp;&amp; <span class="keyword">isset</span>(<span class="PHP_VARIABLE">$_COOKIE</span>[<span class="string">&#39;vendorpassword&#39;</span>]))
+45     {
+46         <span class="keyword">if</span>(confirmUser(<span class="PHP_VARIABLE">$_COOKIE</span>[<span class="string">&#39;vendorusername&#39;</span>],<span class="PHP_VARIABLE">$_COOKIE</span>[<span class="string">&#39;vendorpassword&#39;</span>]))
+47         {
+48             createsessions(<span class="PHP_VARIABLE">$_COOKIE</span>[<span class="string">&#39;vendorusername&#39;</span>],<span class="PHP_VARIABLE">$_COOKIE</span>[<span class="string">&#39;vendorpassword&#39;</span>]);
+49             <span class="keyword">return</span> <span class="keyword">true</span>;
+50         }
+51         <span class="keyword">else</span>
+52         {
+53             clearsessionscookies();
+54             <span class="keyword">return</span> <span class="keyword">false</span>;
+55         }
+56     }
+57     <span class="keyword">else</span>
+58         <span class="keyword">return</span> <span class="keyword">false</span>;
+59 }
+60 <span class="ST1">?&gt; </span>
+</pre></body>
+</html>

@@ -1,0 +1,13 @@
+
+TLD			: CN
+Country			: China
+FIPS104			: CH
+ISO2			: CN
+ISO3			: CHN
+ISONo			: 156.000000
+Capital			: Beijing
+Region			: Asia
+Currency		: Yuan Renminbi
+CurrencyCode		: CNY
+Population		: 1273111290.000000
+

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>confirmdelete.js</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced}
+pre {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.highlight-caret-row {background-color: #e9eff8}
+.ST1 {background-color: #e9eff8; font-family: Monospaced; font-weight: bold}
+.ST4 {background-color: #eceba3}
+.ST2 {color: #009900}
+.STRING_LITERAL {color: #ce7b00}
+.ST0 {color: #0000e6; background-color: #e9eff8}
+.ST3 {color: #0000e6; background-color: #eceba3}
+.keyword {color: #0000e6}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\xampp\htdocs\SkyDrive\Assignment3\js\confirmdelete.js</td></tr></table>
+<pre>
+ 1 <span class="ST0">function</span> <span class="ST1">confirmdelete</span><span class="highlight-caret-row">(</span><span class="highlight-caret-row">ident</span><span class="highlight-caret-row">)</span><span class="highlight-caret-row">{</span>
+ 2     <span class="ST2">loc</span> = <span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">Delete.php?id=</span><span class="STRING_LITERAL">&quot;</span>;
+ 3     <span class="ST2">add</span> = <span class="ST2">loc</span> + ident;
+ 4     <span class="keyword">if</span>(confirm(<span class="STRING_LITERAL">&#39;</span><span class="STRING_LITERAL">Confirm Delete?</span><span class="STRING_LITERAL">&#39;</span>)){
+ 5         <span class="ST2">window</span>.location = <span class="ST2">add</span>;  
+ 6         <span class="ST3">return</span> <span class="ST3">true</span>;
+ 7     }
+ 8     <span class="keyword">else</span> <span class="ST3">return</span> <span class="ST3">false</span>;
+ 9 }
+</pre></body>
+</html>

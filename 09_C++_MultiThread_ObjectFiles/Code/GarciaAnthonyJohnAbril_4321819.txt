@@ -1,0 +1,75 @@
+
+Printing solution for GarciaAnthonyJohnAbril, id : 4321819
+--------------------------------------------------------------------------------------------
+
+Total no. of steps : 34
+
+     0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19
+  0     #  #     #  #        #  #  #  #  #  #  #  #  #  #  #   
+  1     S  1  #        #    23 24 25 26 27 28 29 30 31        #
+  2        2  #     #       22  #                   32  #  #   
+  3        3  4  5  6  #    21 20  #                33  E      
+  4                 7  #       19                              
+  5                 8  #       18                              
+  6                 9  #       17                              
+  7                10  #  #  # 16                              
+  8                11 12 13 14 15                              
+  9                                                            
+
+Total no. of Threads submitting info : 2
+
+Duplicated Paths (to Barriers)    submitted  : 35
+Duplicated Paths (to Danger Area) submitted  : 0
+Total no. of Barrier     ('#') discovered    : 31 out of 105 !!
+Total no. of Danger Area ('X') discovered    : 0 out of 3 !!
+
+Printing Thread Statistics !!
+--------------------------------------------------------------------------------------------
+
+Stats for Thread ID : 140012974573312
+
+Found Solution Path                        : No ...
+
+UNIQUE     Path to barriers discovered     : 32
+DUPLICATED Path to barriers submitted      : 0
+
+UNIQUE     Path to danger areas discovered : 0
+DUPLICATED Path to danger areas submitted  : 0
+
+**********************************************************************
+
+Stats for Thread ID : 140012966180608
+
+Found Solution Path                        : YES !!
+
+UNIQUE     Path to barriers discovered     : 2
+DUPLICATED Path to barriers submitted      : 0
+
+UNIQUE     Path to danger areas discovered : 0
+DUPLICATED Path to danger areas submitted  : 0
+
+**********************************************************************
+
+Discoveries
+Dead End Paths Found   : 4
+Barriers Discovered    : 31
+Danger Area Discovered : 0
+No Of Threads Started  : 2
+No Of Paths Submitted  : 76
+No Of Solns Submitted  : 1
+
+Shortest Path Found    : 
+Total no. of steps : 34
+
+     0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19
+  0  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #
+  1  #  S  1  #        #    23 24 25 26 27 28 29 30 31        #
+  2  #     2  #     #  #    22  #  #        #  #  # 32  #  #  #
+  3  #     3  4  5  6  #    21 20  #           #    33  E     #
+  4  #  #     #     7  #     X 19  #        X        #  #     #
+  5  #           X  8  #  #  # 18  #  #  #  #  #              #
+  6  #     #        9  #       17  #        #           #  #  #
+  7  #     #  #  # 10  #  #  # 16  #  #     #     #  #  #  #  #
+  8  #        #    11 12 13 14 15                             #
+  9  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #  #
+

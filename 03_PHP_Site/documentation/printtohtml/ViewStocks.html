@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>ViewStocks.php</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced}
+pre {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.ST0 {background-color: #e9eff8; font-family: Monospaced; font-weight: bold}
+.ST1 {font-family: Monospaced; font-weight: bold}
+.PHP_VARIABLE {color: #6d3206}
+.string {color: #ce7b00}
+.keyword {color: #0000e6}
+.heredocdelimiter {color: #6c3d03}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\xampp\htdocs\SkyDrive\Assignment3\ViewStocks.php</td></tr></table>
+<pre>
+ 1 <span class="ST0">&lt;?php</span>
+ 2 <span class="PHP_VARIABLE">$mysqli</span> = <span class="keyword">new</span> mysqli(<span class="string">&#39;localhost&#39;</span>, <span class="string">&#39;root&#39;</span>, <span class="string">&#39;&#39;</span>, <span class="string">&#39;iab&#39;</span>);
+ 3 <span class="PHP_VARIABLE">$stmt</span> = <span class="PHP_VARIABLE">$mysqli</span>-&gt;prepare(<span class="string">&quot;select Booksid, Title, Author, Price from Books&quot;</span>);
+ 4 <span class="PHP_VARIABLE">$stmt</span>-&gt;execute();
+ 5 <span class="PHP_VARIABLE">$stmt</span>-&gt;bind_result(<span class="PHP_VARIABLE">$id</span>, <span class="PHP_VARIABLE">$title</span>, <span class="PHP_VARIABLE">$author</span>, <span class="PHP_VARIABLE">$price</span>);
+ 6 
+ 7 
+ 8 <span class="keyword">echo</span> <span class="heredocdelimiter">&lt;&lt;&lt;HEADER</span>
+ 9 <span class="string">&lt;!DOCTYPE html&gt;</span>
+10 <span class="string">&lt;html&gt;</span>
+11 <span class="string">    &lt;head&gt;&lt;title&gt;Stock List&lt;/title&gt;</span>
+12 <span class="string">    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;./css/style1.css&quot;/&gt;&lt;/head&gt;</span>
+13 <span class="string">    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</span>
+14     
+15 <span class="string">    &lt;body&gt;</span>
+16 <span class="string">        &lt;div class=&quot;head&quot;&gt;</span>
+17 <span class="string">            &lt;table&gt;</span>
+18 <span class="string">                &lt;tr&gt;</span>
+19 <span class="string">                    &lt;th&gt;&lt;img src=&quot;./siteimages/stack-of-books.jpg&quot;/&gt;&lt;/th&gt;</span>
+20 <span class="string">                    &lt;td&gt;&lt;h1&gt;Illawarra Antiquarian Books&lt;/h1&gt;&lt;/td&gt;</span>
+21 <span class="string">                &lt;/tr&gt;</span>
+22 <span class="string">            &lt;/table&gt;</span>
+23 <span class="string">        &lt;/div&gt;</span>
+24 <span class="string">        &lt;div class=&quot;body&quot;&gt;</span>
+25 <span class="string">            &lt;h1&gt;Stock List&lt;/h1&gt;</span>
+26 <span class="string">            &lt;table border=&quot;1&quot; width=&quot;650px&quot;&gt;</span>
+27 <span class="string">                &lt;thead&gt;</span>
+28 <span class="string">                    &lt;tr&gt;</span>
+29 <span class="string">                        &lt;th&gt;Id#&lt;/th&gt;</span>
+30 <span class="string">                        &lt;th&gt;Title&lt;/th&gt;</span>
+31 <span class="string">                        &lt;th&gt;Author&lt;/th&gt;</span>
+32 <span class="string">                        &lt;th&gt;Price&lt;/th&gt;</span>
+33 <span class="string">                    &lt;/tr&gt;</span>
+34 <span class="string">                &lt;/thead&gt;</span>
+35 <span class="string">                &lt;tbody&gt;</span>
+36 <span class="heredocdelimiter">HEADER</span>;
+37 <span class="keyword">while</span> (<span class="PHP_VARIABLE">$stmt</span>-&gt;fetch()) {
+38     <span class="keyword">echo</span> <span class="heredocdelimiter">&lt;&lt;&lt;ROW</span>
+39 <span class="string">&lt;tr&gt;</span>
+40 <span class="string">                        &lt;td&gt;&lt;a href=&quot;./Details.php?id=</span><span class="PHP_VARIABLE">$id</span><span class="string">&quot;&gt;</span><span class="PHP_VARIABLE">$id</span><span class="string">&lt;/a&gt;&lt;/td&gt;</span>
+41 <span class="string">                        &lt;td&gt;&lt;a href=&quot;./Details.php?id=</span><span class="PHP_VARIABLE">$id</span><span class="string">&quot;&gt;</span><span class="PHP_VARIABLE">$title</span><span class="string">&lt;/a&gt;&lt;/td&gt;</span>
+42 <span class="string">                        &lt;td&gt;</span><span class="PHP_VARIABLE">$author</span><span class="string">&lt;/td&gt;</span>
+43 <span class="string">                        &lt;td&gt;$</span><span class="PHP_VARIABLE">$price</span><span class="string">&lt;/td&gt;</span>
+44 <span class="string">                    &lt;/tr&gt;</span>
+45 <span class="heredocdelimiter">ROW</span>;
+46 }
+47 <span class="keyword">echo</span> <span class="heredocdelimiter">&lt;&lt;&lt;FOOTER</span>
+48 <span class="string">&lt;/tbody&gt;</span>
+49 <span class="string">            &lt;/table&gt;</span>
+50 <span class="string">            &lt;h3&gt;&lt;input type=&#39;button&#39; onclick=&quot;javascript:history.go(-1)&quot; value=&#39;Go Back&#39;/&gt;&lt;/h3&gt;&lt;/fieldset&gt;</span>
+51 <span class="string">        &lt;/div&gt;</span>
+52 <span class="string">        &lt;div class=&quot;foot&quot;&gt;</span>
+53 <span class="string">            &lt;a href=&quot;./index.php&quot;&gt;Home&lt;/a&gt;&lt;a&gt;&lt;/a&gt;</span>
+54 <span class="string">        &lt;/div&gt;</span>
+55 <span class="string">    &lt;/body&gt;</span>
+56 <span class="string">&lt;/html&gt;</span>
+57 <span class="heredocdelimiter">FOOTER</span>;
+58 <span class="PHP_VARIABLE">$stmt</span>-&gt;close();
+59 <span class="PHP_VARIABLE">$mysqli</span>-&gt;close();
+60 <span class="ST1">?&gt;</span>
+</pre></body>
+</html>

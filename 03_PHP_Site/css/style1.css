@@ -1,0 +1,68 @@
+/* 
+    Document   : style1
+    Created on : Aug 9, 2012, 1:10:52 PM
+    Author     : JaGsTeRz
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+body { 
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url(../siteimages/background.jpg);
+}
+
+.head{
+    display:block;
+    width:100%;
+    margin: 0 auto;
+    text-align:center;
+    width:700px;
+    font-size:36px;
+    font-style: normal;
+    font-family: old_font;
+    color: #333333;
+}
+.body{
+    margin: 0 auto;
+    width: 700px;
+    font-family: Georgia;
+    font-style: italic;
+    text-align: justify;
+}
+.foot{
+
+    margin: 0 auto;
+    width:650px;
+    text-align: center;
+    vertical-align: bottom;
+    font-size: small;
+}
+
+h1{
+
+    text-align: center;
+    font-family: old_font;
+    font-size: XX-large;
+    font-style: normal;
+    margin-bottom: 1px;
+}
+
+h2{
+
+    font-size: medium;
+}
+h3{
+
+    text-align: center;
+    margin-bottom: 1px;
+}
+a:link {color:#999999;}      /* unvisited link */
+a:visited {color:#999999;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */ 
+
+@font-face {
+	font-family: old_font; src: url('OLDENGL.TTF');
+}

@@ -1,0 +1,8 @@
+Adrian Drake;adrian;a123;77 Lamond Street;75414444;adriandrake@yahoo.com
+Ben Brown;ben;b345;123 Edward Street;39889276;benbrown@hotmail.com
+Clarence Clarkson;clarence;c678;215 Kings Lane;67893344;clarence@msn.com
+Clark Kent;clark;ck123;123 Metropolis State;65473432;clarkkent@msn.gov.com
+Lorp Dorp;ldorp;dorp123;Dorp Street;4567543;lorp@lorp.com
+He Ke Cheng;hkcheng;cheng123;123 Lakeside View;97261823;kecheng@china.com
+Lost World;lworld;lost1234;Lost World Street 1234;756473627;lost@world.com
+Ben Tall;benc;b345;Clark Street 123;6574632;ben@yahoo.com

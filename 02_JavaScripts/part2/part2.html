@@ -1,0 +1,44 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link type="text/css" rel="stylesheet" href="style.css"/>
+        <script type="text/javascript" src="deerhunter.js"></script>
+    </head>
+    <body>
+        <div id="field" onclick="return missScore()">
+            <img src="images/grassfield.jpg" id="background"/>
+            <div id="division" style="display: none"  onclick="return hitScore()">
+                <img src="images/cowsmall.gif" id="sprite"/>
+            </div>
+        </div>
+        <div>
+            <table align="left" border="1">
+                <tr>
+                    <td><input type="button" id="start" value="Start" onclick="doStart()"/></td>
+                    <td>Shots</td>
+                    <td><input type="text" id="shots" value="0" size="5" readonly/></td>
+                    <td>Stags</td>
+                    <td><input type="text" id="stags" value="0" size="5" readonly/></td>
+                    <td>Cows</td>
+                    <td><input type="text" id="cows" value="0" size="5" readonly/></td>
+                    <td>Hikers</td>
+                    <td><input type="text" id="hikers" value="0" size="5" readonly/></td>
+                    <td>Score</td>
+                    <td><input type="text" id="score" value="0" size="7" readonly/></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+

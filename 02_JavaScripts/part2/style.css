@@ -1,0 +1,22 @@
+/* 
+    Document   : style
+    Created on : Jul 24, 2012, 10:24:21 PM
+    Author     : JaGsTeRz
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+body {
+    display: block;
+}
+
+#field{
+    width: 600px;
+    height: 450px;
+    cursor: crosshair;
+}
+
+#division{
+    position: absolute;
+    display: block;
+}

@@ -1,0 +1,59 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Subscription Form</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link type="text/css" rel="stylesheet" href="./style.css"/>
+        <script type="text/javascript" src="checkdata.js"></script>
+    </head>
+    <body>
+        <h1>Your subscription to W3 Magazine</h1>
+        <form method="post" name="form" onsubmit="return checkdata()">
+            <fieldset>
+                <legend>Your name and address</legend>
+                <p>Given name</p>
+                <input type="text" id="givenname" name="gname" placeholder="Charles">
+                <p>Family name</p>
+                <input type="text" id="firstname" name="fname" placeholder="Windsor">
+                <p>Address line 1</p>
+                <input type="text" id="addline1" name="addl1" placeholder="104 Crown Street">
+                <p>Address line 2</p>
+                <input type="text" id="addline2" name="addl2">
+                <p>City</p>
+                <input type="text" id="city" name="city" placeholder="Wollongong">
+                <p>State</p>
+                <select id="state">
+                    <option value="1">ATC</option>
+                    <option value="2">NSW</option>
+                    <option value="3">NT</option>
+                    <option value="4">QLD</option>
+                    <option value="5">SA</option>
+                    <option value="6">TAS</option>
+                    <option value="7">VIC</option>
+                    <option value="8">WA</option>
+                </select>
+                <p>Post code</p>
+                <input type="text" id="postcode" name="pcode" placeholder="2500">
+            </fieldset>
+            <fieldset>
+                <legend>Credit Card</legend>
+                <p>Card issuer</p>
+                <select id="cardtype">
+                    <option value="1">Visa</option>
+                    <option value="2">Mastercard</option>
+                </select>
+                <p>Card number</p>
+                <input type="text" id="cardnum" name="cnum" size="24" maxlength="20" 
+                       placeholder="4111-1111-1111-1111">
+            </fieldset>
+            <fieldset>
+                <legend>Form submission</legend>
+                <button type="submit">Place order</button>
+            </fieldset>
+        </form>
+    </body>
+</html>

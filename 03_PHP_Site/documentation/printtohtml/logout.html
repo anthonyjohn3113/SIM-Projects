@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>logout.php</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced}
+pre {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.ST0 {background-color: #e9eff8; font-family: Monospaced; font-weight: bold}
+.ST1 {font-family: Monospaced; font-weight: bold}
+.string {color: #ce7b00}
+.keyword {color: #0000e6}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\xampp\htdocs\SkyDrive\Assignment3\logout.php</td></tr></table>
+<pre>
+1 <span class="ST0">&lt;?php</span>
+2 session_start();
+3 <span class="keyword">require_once</span> (<span class="string">&quot;Session.php&quot;</span>); 
+4 clearsessionscookies();
+5 header(<span class="string">&#39;location: index.php&#39;</span>);
+6 <span class="ST1">?&gt;</span>
+7 
+</pre></body>
+</html>

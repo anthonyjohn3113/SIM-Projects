@@ -1,0 +1,5 @@
+#!/bin/bash
+
+g++ Maze.o Path.o SubmitMazeSoln.o PathFinder.cpp -lpthread -o -g PathFinder
+
+./ gdb PathFinder

@@ -1,0 +1,29 @@
+
+
+
+			index.html
+	____________________|_____________________________________
+       |        |        |        |        |       |              |
+       |        |        |        |        |       |   http://www.sciencedaily.com/releases/*
+members.html    | exercises.html  | routines.html  |
+       |        |                 |                |
+       | gallery.html       equipments.html    join.html
+       |        | 
+ about.html     |
+       _________|__________
+      |                    |
+   images                videos
+      |                    |
+assignment1/images/*   http://videos.bodybuilding.com/video/mp4/*
+
+
+
+
+
+
+
+
+
+
+
+

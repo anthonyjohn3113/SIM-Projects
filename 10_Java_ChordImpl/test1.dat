@@ -1,0 +1,19 @@
+init 32
+addpeer 7
+addpeer 3
+removepeer 3
+addpeer 12
+addpeer 3
+addpeer 9
+removepeer 3
+addpeer 17
+insert 0 THIS IS A TEST
+insert 7 Markus Hagenbuchner
+insert 7 CSCI319
+print 12
+delete 0 THIS IS A TEST
+print 12
+print 0
+print 7
+print 9
+print 17

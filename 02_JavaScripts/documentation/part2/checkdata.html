@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>checkdata.js</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced}
+pre {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.ST1 {font-family: Monospaced; font-weight: bold}
+.mod-regexp {color: #9933cc}
+.LINE_COMMENT {color: #969696}
+.ST0 {color: #969696; background-color: #e9eff8}
+.ST3 {color: #ce7b00; font-family: Monospaced; font-weight: bold}
+.ST2 {color: #009900}
+.STRING_LITERAL {color: #ce7b00}
+.keyword {color: #0000e6}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\xampp\htdocs\Assignment2\part1\checkdata.js</td></tr></table>
+<pre>
+  1 <span class="ST0">/* </span>
+  2 <span class="LINE_COMMENT"> * </span><span class="LINE_COMMENT">To</span> <span class="LINE_COMMENT">change</span> <span class="LINE_COMMENT">this</span> <span class="LINE_COMMENT">template</span><span class="LINE_COMMENT">, </span><span class="LINE_COMMENT">choose</span> <span class="LINE_COMMENT">Tools</span><span class="LINE_COMMENT"> | </span><span class="LINE_COMMENT">Templates</span>
+  3 <span class="LINE_COMMENT"> * </span><span class="LINE_COMMENT">and</span> <span class="LINE_COMMENT">open</span> <span class="LINE_COMMENT">the</span> <span class="LINE_COMMENT">template</span> <span class="LINE_COMMENT">in</span> <span class="LINE_COMMENT">the</span> <span class="LINE_COMMENT">editor</span><span class="LINE_COMMENT">.</span>
+  4 <span class="LINE_COMMENT"> */</span>
+  5 
+  6 
+  7 <span class="keyword">function</span> <span class="ST1">checkdata</span>(){
+  8     
+  9     <span class="keyword">if</span>(!checkname()){<span class="keyword">return</span> <span class="keyword">false</span>;}
+ 10     <span class="keyword">if</span>(!checkadd()){<span class="keyword">return</span> <span class="keyword">false</span>;}
+ 11     <span class="keyword">if</span>(!checkstate()){<span class="keyword">return</span> <span class="keyword">false</span>;}
+ 12     <span class="keyword">if</span>(!checkcard()){<span class="keyword">return</span> <span class="keyword">false</span>;}
+ 13     <span class="keyword">if</span>(!confirmSubmit()){<span class="keyword">return</span> <span class="keyword">false</span>;}
+ 14     <span class="keyword">else</span> <span class="keyword">return</span> <span class="keyword">true</span>;
+ 15 }
+ 16 
+ 17 <span class="keyword">function</span> <span class="ST1">checkname</span>(){
+ 18     <span class="keyword">var</span> gname = <span class="ST2">document</span>.getElementById(<span class="STRING_LITERAL">&#39;</span><span class="STRING_LITERAL">givenname</span><span class="STRING_LITERAL">&#39;</span>).value; 
+ 19     <span class="keyword">var</span> fname = <span class="ST2">document</span>.getElementById(<span class="STRING_LITERAL">&#39;</span><span class="STRING_LITERAL">firstname</span><span class="STRING_LITERAL">&#39;</span>).value;
+ 20     
+ 21     <span class="keyword">var</span> tgname = <span class="keyword">new</span> RegExp(<span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">^[A-Z]([A-Z]|[a-z]){2,20}$</span><span class="STRING_LITERAL">&quot;</span>);
+ 22     <span class="keyword">if</span>(!tgname.test(gname)){
+ 23         alert(<span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">Given name not valid. First letter must be capital and between 3-21 chars.</span><span class="STRING_LITERAL">&quot;</span>);
+ 24         <span class="keyword">return</span> <span class="keyword">false</span>;
+ 25     }
+ 26     <span class="keyword">var</span> tfname = <span class="keyword">new</span> RegExp(<span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">^[A-Z]([A-Z]|[a-z]|[&#39;]|[-]){2,20}$</span><span class="STRING_LITERAL">&quot;</span>);
+ 27     <span class="keyword">if</span>(!tfname.test(fname)){
+ 28         alert(<span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">Family name not valid. First letter must be capital and between 3-21 chars. Can contain &#39; or - .</span><span class="STRING_LITERAL">&quot;</span>);
+ 29         <span class="keyword">return</span> <span class="keyword">false</span>;
+ 30     }
+ 31     <span class="keyword">return</span> <span class="keyword">true</span>;
+ 32 }
+ 33 
+ 34 <span class="keyword">function</span> <span class="ST1">checkadd</span>(){
+ 35     <span class="keyword">var</span> addl1 = <span class="ST2">document</span>.getElementById(<span class="STRING_LITERAL">&#39;</span><span class="STRING_LITERAL">addline1</span><span class="STRING_LITERAL">&#39;</span>).value; 
+ 36     <span class="keyword">var</span> addl2 = <span class="ST2">document</span>.getElementById(<span class="STRING_LITERAL">&#39;</span><span class="STRING_LITERAL">addline2</span><span class="STRING_LITERAL">&#39;</span>).value + (<span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">-</span><span class="STRING_LITERAL">&quot;</span>);
+ 37     <span class="keyword">var</span> cit = <span class="ST2">document</span>.getElementById(<span class="STRING_LITERAL">&#39;</span><span class="STRING_LITERAL">city</span><span class="STRING_LITERAL">&#39;</span>).value;
+ 38     
+ 39     <span class="keyword">var</span> tadd = <span class="keyword">new</span> RegExp(<span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">^([A-Z]|[a-z]|[0-9]|[,]|[-]|[ ]|[/]){1,20}$</span><span class="STRING_LITERAL">&quot;</span>);
+ 40     <span class="keyword">if</span> (!tadd.test(addl1)){
+ 41         alert(<span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">Address Line 1 not valid. Please try again.</span><span class="STRING_LITERAL">&quot;</span>);
+ 42         <span class="keyword">return</span> <span class="keyword">false</span>;
+ 43     }
+ 44     <span class="keyword">if</span> (!tadd.test(addl2)){
+ 45         alert(<span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">Address Line 2 not valid. Please try again.</span><span class="STRING_LITERAL">&quot;</span>);
+ 46         <span class="keyword">return</span> <span class="keyword">false</span>;
+ 47     }
+ 48     <span class="keyword">if</span> (!tadd.test(cit)){
+ 49         alert(<span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">City not valid. Please try again.</span><span class="STRING_LITERAL">&quot;</span>);
+ 50         <span class="keyword">return</span> <span class="keyword">false</span>;
+ 51     }
+ 52     <span class="keyword">return</span> <span class="keyword">true</span>;
+ 53 }
+ 54 
+ 55 <span class="keyword">function</span> <span class="ST1">checkstate</span>(){
+ 56     <span class="keyword">var</span> sta = <span class="ST2">document</span>.getElementById(<span class="STRING_LITERAL">&#39;</span><span class="STRING_LITERAL">state</span><span class="STRING_LITERAL">&#39;</span>).value;
+ 57     <span class="keyword">var</span> pstcd = <span class="ST2">document</span>.getElementById(<span class="STRING_LITERAL">&#39;</span><span class="STRING_LITERAL">postcode</span><span class="STRING_LITERAL">&#39;</span>).value;
+ 58     
+ 59     <span class="keyword">if</span>(sta==1){
+ 60         <span class="keyword">if</span>((pstcd&gt;=2900)&amp;&amp;(pstcd&lt;=2999)){
+ 61             <span class="keyword">return</span> <span class="keyword">true</span>;
+ 62         }
+ 63         <span class="keyword">if</span>((pstcd&lt;2600)||(pstcd&gt;2618)){
+ 64             alert(<span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">Postcode not valid for ATC. (2600 to 2618 and 29## )</span><span class="STRING_LITERAL">&quot;</span>); 
+ 65             <span class="keyword">return</span> <span class="keyword">false</span>;
+ 66         }
+ 67     }
+ 68     <span class="keyword">if</span>(sta==2){
+ 69         <span class="keyword">if</span>((pstcd&gt;2999)||(pstcd&lt;2000)){
+ 70             alert(<span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">Postcode not valid for NSW. (2### )</span><span class="STRING_LITERAL">&quot;</span>);
+ 71             <span class="keyword">return</span> <span class="keyword">false</span>;
+ 72         }
+ 73     }
+ 74     <span class="keyword">if</span>(sta==3){
+ 75         <span class="keyword">if</span>((pstcd&gt;999)||(pstcd&lt;800)){
+ 76             alert(<span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">Postcode not valid for NT. (08## and 09##)</span><span class="STRING_LITERAL">&quot;</span>);
+ 77             <span class="keyword">return</span> <span class="keyword">false</span>;
+ 78         }
+ 79     }
+ 80     <span class="keyword">if</span>(sta==4){
+ 81         <span class="keyword">if</span>((pstcd&gt;4999)||(pstcd&lt;4000)){
+ 82             alert(<span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">Postcode not valid for QLD. (4###)</span><span class="STRING_LITERAL">&quot;</span>);
+ 83             <span class="keyword">return</span> <span class="keyword">false</span>;
+ 84         }
+ 85     }
+ 86     <span class="keyword">if</span>(sta==5){
+ 87         <span class="keyword">if</span>((pstcd&gt;5999)||(pstcd&lt;5000)){
+ 88             alert(<span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">Postcode not valid for SA. (5###)</span><span class="STRING_LITERAL">&quot;</span>);
+ 89             <span class="keyword">return</span> <span class="keyword">false</span>;
+ 90         }
+ 91     }
+ 92     <span class="keyword">if</span>(sta==6){
+ 93         <span class="keyword">if</span>((pstcd&gt;7999)||(pstcd&lt;7000)){
+ 94             alert(<span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">Postcode not valid for TAS. (7###)</span><span class="STRING_LITERAL">&quot;</span>);
+ 95             <span class="keyword">return</span> <span class="keyword">false</span>;
+ 96         }
+ 97     }
+ 98     <span class="keyword">if</span>(sta==7){
+ 99         <span class="keyword">if</span>((pstcd&gt;3999)||(pstcd&lt;3000)){
+100             alert(<span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">Postcode not valid for VIC. (3###)</span><span class="STRING_LITERAL">&quot;</span>);
+101             <span class="keyword">return</span> <span class="keyword">false</span>;
+102         }
+103     }
+104     <span class="keyword">if</span>(sta==8){
+105         <span class="keyword">if</span>((pstcd&gt;6999)||(pstcd&lt;6000)){
+106             alert(<span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">Postcode not valid for WA. (6###)</span><span class="STRING_LITERAL">&quot;</span>);
+107             <span class="keyword">return</span> <span class="keyword">false</span>;
+108         }
+109     }
+110     <span class="keyword">return</span> <span class="keyword">true</span>;
+111 }
+112 
+113 <span class="keyword">function</span> <span class="ST1">checkcard</span>(){
+114     <span class="keyword">var</span> cval = <span class="ST2">document</span>.getElementById(<span class="STRING_LITERAL">&#39;</span><span class="STRING_LITERAL">cardtype</span><span class="STRING_LITERAL">&#39;</span>).value;
+115     <span class="keyword">var</span> cnum = <span class="ST2">document</span>.getElementById(<span class="STRING_LITERAL">&#39;</span><span class="STRING_LITERAL">cardnum</span><span class="STRING_LITERAL">&#39;</span>).value;
+116     <span class="keyword">var</span> a = cnum.charAt(0);
+117     cnum = cnum.replace(<span class="mod-regexp">/</span><span class="mod-regexp">[^\d]</span><span class="mod-regexp">/g</span>, <span class="STRING_LITERAL">&#39;</span><span class="STRING_LITERAL">&#39;</span>);
+118     
+119     <span class="keyword">if</span>(cval==1){
+120         <span class="keyword">if</span>(a!=<span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">4</span><span class="STRING_LITERAL">&quot;</span>){
+121             alert(<span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">Visa cards must start with 4</span><span class="STRING_LITERAL">&quot;</span>)
+122             <span class="keyword">return</span> <span class="keyword">false</span>;
+123         }
+124         <span class="keyword">else</span>{
+125             <span class="keyword">if</span>(!checkLuhn(cnum)) {
+126                 alert(<span class="STRING_LITERAL">&#39;</span><span class="STRING_LITERAL">Sorry, that is not a valid credit card number! E.g. (4111-1111-1111-1111)</span><span class="STRING_LITERAL">&#39;</span>);
+127                 <span class="keyword">return</span> <span class="keyword">false</span>;
+128             }
+129         }
+130     }
+131     <span class="keyword">if</span>(cval==2){
+132         <span class="keyword">if</span>(a!=<span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">5</span><span class="STRING_LITERAL">&quot;</span>){
+133             alert(<span class="STRING_LITERAL">&quot;</span><span class="STRING_LITERAL">Mastercard cards must start with 5</span><span class="STRING_LITERAL">&quot;</span>)
+134             <span class="keyword">return</span> <span class="keyword">false</span>;
+135         }
+136         <span class="keyword">else</span>{
+137             <span class="keyword">if</span>(!checkLuhn(cnum)) {
+138                 alert(<span class="STRING_LITERAL">&#39;</span><span class="STRING_LITERAL">Sorry, that is not a valid credit card number! </span><span class="ST3">\n</span><span class="STRING_LITERAL">E.g. (4111-1111-1111-1111) / 12 Digits / Credit card number do not exist!</span><span class="STRING_LITERAL">&#39;</span>);
+139                 <span class="keyword">return</span> <span class="keyword">false</span>;
+140             }
+141         }
+142     }
+143     <span class="keyword">return</span> <span class="keyword">true</span>;
+144 }
+145 
+146 <span class="keyword">function</span> <span class="ST1">checkLuhn</span>(input)
+147 {
+148     <span class="keyword">var</span> sum = 0;
+149     <span class="keyword">var</span> numdigits = input.length;
+150     <span class="keyword">var</span> parity = numdigits % 2;
+151     <span class="keyword">for</span>(<span class="keyword">var</span> i=0; i &lt; numdigits; i++) {
+152         <span class="keyword">var</span> digit = parseInt(input.charAt(i))
+153         <span class="keyword">if</span>(i % 2 == parity) digit *= 2;
+154         <span class="keyword">if</span>(digit &gt; 9) digit -= 9;
+155         sum += digit;
+156     }
+157     <span class="keyword">return</span> (sum % 10) == 0;
+158 }
+159 
+160 
+161 <span class="keyword">function</span> <span class="ST1">confirmSubmit</span>(){
+162     <span class="keyword">if</span>(confirm(<span class="STRING_LITERAL">&#39;</span><span class="STRING_LITERAL">Confirm Submit?</span><span class="STRING_LITERAL">&#39;</span>)){<span class="keyword">return</span> <span class="keyword">true</span>;}
+163     <span class="keyword">else</span> <span class="keyword">return</span> <span class="keyword">false</span>;
+164 }
+165 
+166 
+167 
+168 
+169 
+170 
+</pre></body>
+</html>

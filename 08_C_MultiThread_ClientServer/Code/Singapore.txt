@@ -1,0 +1,13 @@
+
+TLD			: SG
+Country			: Singapore
+FIPS104			: SN
+ISO2			: SG
+ISO3			: SGP
+ISONo			: 702.000000
+Capital			: Singapore
+Region			: Southeast Asia
+Currency		: Singapore Dollar
+CurrencyCode		: SGD
+Population		: 4300419.000000
+

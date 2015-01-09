@@ -1,0 +1,41 @@
+/* 
+    Document   : style
+    Created on : Jul 19, 2012, 11:15:26 AM
+    Author     : JaGsTeRz
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+body{
+    
+    background-color: #c5effd;
+}
+
+p,legend,h1{
+    color: #006295;
+    font-family: 'Times New Roman',Times,serif;
+    font-weight: bold;
+}
+input{
+    /*color: #a0e4fc;*/
+    font-weight: lighter;
+    margin-left: 30px;
+}
+button{
+    color: #cc0033;
+    font-family: Georgia,'Times New Roman',times,serif;
+    font-size: 18px;
+    background-color: #ffffff;
+}
+p{
+    height: 3px;
+    margin-top: 5px;
+}
+select{
+    margin-left: 30px;
+    background-color: #999999;
+}
+h1{text-align: center;}
